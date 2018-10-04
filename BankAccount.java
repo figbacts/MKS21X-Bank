@@ -4,7 +4,7 @@ private int realAccountID;
 private double realBalance;
 private String realPassword;
 
-public BankAccount ( int accountID, double balance, String password){
+public BankAccount ( double balance, int accountID, String password){
   realAccountID = accountID;
   realBalance = balance;
   realPassword = password;
@@ -27,10 +27,16 @@ public int getAccountID(){
  public void setPassword(String newPass){
    realPassword = newPass;
  }
+private boolean authenticate(String password){
+if (realPassword.equals(password)){
+return true;}
+else {
+return false;}}
+
 
 
  public boolean deposit(double amount){
-   if (amount >= 0){
+   if (amou  nt >= 0){
      realBalance += amount;
      return true;
    }
@@ -48,4 +54,5 @@ public int getAccountID(){
      return false;
    }
  }
+
 }
