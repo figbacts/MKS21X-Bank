@@ -36,7 +36,7 @@ return false;}}
 
 
  public boolean deposit(double amount){
-   if (amou  nt >= 0){
+   if (amount >= 0){
      realBalance += amount;
      return true;
    }
@@ -54,5 +54,16 @@ return false;}}
      return false;
    }
  }
+ public boolean transferTo(BankAccount other, double amount, String password){
+   if (amount >= 0 && this.authenticate(password)){
+     this.withdraw(amount);
+     other.deposit(amount);
+     return true;
+   }
+   else {
+     return false;
+   }
+ }
+
 
 }
